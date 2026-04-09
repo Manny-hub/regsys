@@ -1,0 +1,283 @@
+:root {
+    --portal-navy: #0f172a;
+    --portal-blue: #1d4ed8;
+    --portal-cyan: #06b6d4;
+    --portal-cream: #f8fafc;
+    --portal-gold: #f59e0b;
+    --portal-slate: #64748b;
+    --portal-surface: rgba(255, 255, 255, 0.88);
+    --portal-surface-strong: #ffffff;
+    --portal-border: rgba(148, 163, 184, 0.2);
+    --portal-shadow: 0 22px 60px rgba(15, 23, 42, 0.12);
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background:
+        radial-gradient(circle at top left, rgba(29, 78, 216, 0.12), transparent 30%),
+        radial-gradient(circle at top right, rgba(6, 182, 212, 0.12), transparent 26%),
+        linear-gradient(180deg, #f8fbff 0%, #eef4fb 100%);
+    color: #1d2a35;
+    min-height: 100vh;
+}
+
+.app-shell {
+    min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.navbar-brand {
+    font-family: 'Outfit', sans-serif;
+}
+
+.portal-navbar {
+    background: rgba(15, 23, 42, 0.84);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.14);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.portal-card,
+.card {
+    border-radius: 1.35rem;
+    border: 1px solid var(--portal-border);
+    background: var(--portal-surface);
+    backdrop-filter: blur(18px);
+    box-shadow: var(--portal-shadow);
+}
+
+.hero-panel {
+    background:
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.18), transparent 22%),
+        linear-gradient(135deg, #0f172a 0%, #1d4ed8 52%, #0891b2 100%);
+    color: #fff;
+    box-shadow: 0 28px 70px rgba(29, 78, 216, 0.24);
+}
+
+.admin-hero {
+    background:
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.12), transparent 20%),
+        linear-gradient(135deg, #0f172a 0%, #111827 45%, #1d4ed8 100%);
+}
+
+.unit-badge {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 999px;
+    color: #fff;
+    display: inline-flex;
+    padding: 0.7rem 1rem;
+}
+
+.course-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.course-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 1rem 2rem rgba(15, 23, 42, 0.1);
+}
+
+.course-card::after {
+    content: '';
+    position: absolute;
+    inset: auto -30% -55% auto;
+    width: 170px;
+    height: 170px;
+    background: radial-gradient(circle, rgba(29, 78, 216, 0.16), transparent 65%);
+    pointer-events: none;
+}
+
+.course-card.is-registered {
+    border-color: rgba(16, 185, 129, 0.28);
+}
+
+.empty-state {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(241, 245, 249, 0.88));
+    border-radius: 1rem;
+}
+
+.form-control,
+.btn,
+.page-link {
+    border-radius: 0.9rem;
+}
+
+.form-control,
+.form-select {
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    background: rgba(255, 255, 255, 0.88);
+    padding: 0.82rem 1rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+    box-shadow: 0 0 0 0.25rem rgba(29, 78, 216, 0.12);
+    border-color: rgba(29, 78, 216, 0.5);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #1d4ed8, #2563eb);
+    border: none;
+    box-shadow: 0 14px 28px rgba(37, 99, 235, 0.22);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background: linear-gradient(135deg, #1e40af, #1d4ed8);
+}
+
+.btn-dark {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    border: none;
+}
+
+.btn-outline-secondary,
+.btn-outline-danger,
+.btn-outline-primary {
+    background: rgba(255, 255, 255, 0.55);
+}
+
+.alert {
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+.metric-card .card-body,
+.analytics-card .card-body,
+.analytics-card .card-header {
+    position: relative;
+    z-index: 1;
+}
+
+.metric-card {
+    overflow: hidden;
+}
+
+.metric-card::before,
+.analytics-card::before,
+.auth-card::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #1d4ed8, #06b6d4, #f59e0b);
+}
+
+.metric-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--portal-slate);
+}
+
+.metric-footnote {
+    color: var(--portal-slate);
+}
+
+.analytics-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.analytics-list {
+    display: grid;
+    gap: 0.85rem;
+}
+
+.analytics-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.95rem 1rem;
+    border-radius: 1rem;
+    background: rgba(248, 250, 252, 0.92);
+    border: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.activity-feed {
+    display: grid;
+    gap: 1rem;
+}
+
+.activity-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1rem;
+    background: rgba(248, 250, 252, 0.92);
+    border-radius: 1rem;
+    border: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.activity-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #1d4ed8, #06b6d4);
+    margin-top: 0.45rem;
+    box-shadow: 0 0 0 6px rgba(29, 78, 216, 0.12);
+}
+
+.auth-card {
+    overflow: hidden;
+}
+
+.table-modern thead th,
+.table thead th {
+    color: var(--portal-slate);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-bottom-color: rgba(148, 163, 184, 0.18);
+}
+
+.table-modern tbody tr,
+.table tbody tr {
+    border-color: rgba(148, 163, 184, 0.1);
+}
+
+.table-modern tbody tr:hover,
+.table tbody tr:hover {
+    background: rgba(248, 250, 252, 0.88);
+}
+
+.pagination .page-link {
+    border: none;
+    color: var(--portal-blue);
+    background: rgba(255, 255, 255, 0.8);
+    margin: 0 0.18rem;
+}
+
+.pagination .page-item.active .page-link {
+    background: linear-gradient(135deg, #1d4ed8, #2563eb);
+    box-shadow: 0 12px 24px rgba(37, 99, 235, 0.18);
+}
+
+canvas[data-chart-type] {
+    width: 100% !important;
+    min-height: 260px;
+}
+
+.form-text {
+    color: var(--portal-slate);
+}
+
+@media (max-width: 767.98px) {
+    .hero-panel {
+        border-radius: 1.25rem;
+    }
+
+    canvas[data-chart-type] {
+        min-height: 220px;
+    }
+}
