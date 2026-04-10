@@ -1,0 +1,23 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Docker local overrides and data
+docker-compose.override.yml
+mysql_data/
+docker/mysql/data/
+*.pid
+
+# Logs and runtime files
+logs/
+*.log
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Git internals accidentally copied into the project root
+.codex

@@ -7,12 +7,13 @@ class Database
     public static function getConnection(): PDO
     {
         if (self::$connection === null) {
-            $host = 'localhost';
-            $dbName = 'esae_course_portal';
-            $username = 'root';
-            $password = '';
+            $host = getenv('DB_HOST') ?: 'localhost';
+            $dbName = getenv('DB_NAME') ?: 'esae_course_portal';
+            $username = getenv('DB_USER') ?: 'root';
+            $password = getenv('DB_PASS') ?: '';
+            $port = getenv('DB_PORT') ?: '3306';
 
-            $dsn = "mysql:host={$host};dbname={$dbName};charset=utf8mb4";
+            $dsn = "mysql:host={$host};port={$port};dbname={$dbName};charset=utf8mb4";
 
             self::$connection = new PDO($dsn, $username, $password, [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,

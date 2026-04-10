@@ -1,0 +1,8 @@
+.git
+.gitignore
+.env
+.env.*
+!.env.example
+mysql_data
+docker-compose.override.yml
+README.md

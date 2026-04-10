@@ -46,7 +46,34 @@ regsys/
 
 ## Database SQL
 
-Import [database/schema.sql](/home/dell/Documents/regsys/database/schema.sql) into MySQL using phpMyAdmin or the MySQL CLI.
+Import [database/schema.sql](/home/dell/Documents/regsys/database/schema.sql) into MySQL using phpMyAdmin or the MySQL CLI, or let Docker load it automatically on first boot.
+
+## Docker Setup For Linux
+
+1. Make sure Docker Engine and Docker Compose are installed.
+2. Copy the environment template:
+   `cp .env.example .env`
+3. Edit `.env` and change the database passwords to your own values.
+4. Start the containers:
+   `docker compose up --build -d`
+5. Open the portal at:
+   `http://localhost:8080`
+6. Run the initial admin setup once:
+   `http://localhost:8080/install.php`
+
+### Docker Services
+
+- App container: PHP 8.2 + Apache
+- DB container: MySQL 8.0
+- App port: `8080`
+- MySQL host port: `3307`
+
+### Useful Docker Commands
+
+- Start: `docker compose up --build -d`
+- Stop: `docker compose down`
+- Stop and remove database volume: `docker compose down -v`
+- View logs: `docker compose logs -f`
 
 ## XAMPP Setup Instructions
 
@@ -58,6 +85,7 @@ Import [database/schema.sql](/home/dell/Documents/regsys/database/schema.sql) in
    - database: `esae_course_portal`
    - username: `root`
    - password: empty string
+   - port: `3306`
 5. Visit `http://localhost/regsys/install.php` once to create the default admin account.
 6. Open `http://localhost/regsys/` in your browser.
 
@@ -85,3 +113,4 @@ Import [database/schema.sql](/home/dell/Documents/regsys/database/schema.sql) in
 - Session-based authentication protects student and admin routes.
 - Prepared statements are used for all database access.
 - CSRF tokens are used for POST forms and AJAX actions.
+- Docker/local secrets are excluded with [.gitignore](/home/dell/Documents/regsys/.gitignore).
